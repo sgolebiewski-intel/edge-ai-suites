@@ -12,7 +12,7 @@ models for video analysis. This sample application offers the following features
 
 ## Get Started
 
-To see the system requirements and other installation, see the following guides:
+First, refer to the following guides:
 
 - [System Requirements](./docs/user-guide/system-requirements.md)
 - [Setup guide](./docs/user-guide/get-started.md)

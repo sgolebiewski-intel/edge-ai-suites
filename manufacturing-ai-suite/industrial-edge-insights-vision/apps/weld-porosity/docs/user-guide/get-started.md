@@ -3,7 +3,7 @@
 -   **Time to Complete:** 30 minutes
 -   **Programming Language:**  Python 3
 
-## Prerequisites
+## System Requirements
 
 - [System Requirements](system-requirements.md)
 
