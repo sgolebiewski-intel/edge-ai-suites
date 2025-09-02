@@ -7,9 +7,9 @@
 
 ## Overview
 
-Edge AI Suites are collections of open, industry-specific AI software development kits (SDKs), microservices, and sample applications for independent software vendors (ISVs), system integrators and solutions builders. 
+Edge AI Suites in collections of open, industry-specific AI software development kits (SDKs), microservices, and sample applications for independent software vendors (ISVs), system integrators and solutions builders. 
 
-These suites simplify the creation of custom AI solutions for specific industries by providing curated sample applications, example code and benchmarks to accelerate application development. Optimized code for AI, media, and end-to-end workloads are enabled to save development time and improve solution performance. 
+The suites simplify the creation of custom AI solutions for specific industries by providing curated sample applications, example code and benchmarks to accelerate application development. Optimized code for AI, media, and end-to-end workloads are enabled to save development time and improve solution performance. 
 
 [The Metro AI Suite](metro-ai-suite) accelerates the development of solutions for Edge AI video, safety and security, smart city and transportation use cases. 
 
