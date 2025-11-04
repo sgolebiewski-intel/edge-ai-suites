@@ -17,7 +17,7 @@ before proceeding with the below steps.
     docker compose build
     ```
 
-    > **Note:**  
+    > **Note:**
     > To include copyleft licensed sources when building the Docker image, use the below command:
     >
     > ```bash
@@ -34,7 +34,7 @@ before proceeding with the below steps.
     make build # builds only data simulator and fusion analytics docker images
     ```
 
-    > **Note:**  
+    > **Note:**
     > To include copyleft licensed sources when building the Docker images, use the below command:
     >
     > ```bash
@@ -42,5 +42,5 @@ before proceeding with the below steps.
     > ```
 
 2. **Docker compose deployment and Verification**:
-    
+
     Follow the remaining steps/sections starting from [docker compose deployment](./get-started.md#deploy-with-docker-compose)

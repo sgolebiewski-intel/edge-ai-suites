@@ -3,8 +3,7 @@
 
 ![MultiModal Weld Defect Detection Architecture Diagram](../_images/Multimodal-Weld-Defect-Detection-Architecture.png)
 
-
-## 1. **Weld Data Simulator**:
+## 1. **Weld Data Simulator**
 
 The Weld Data Simulator simulates the ingestion of weld image and sensor data by reading through the set of time synchronized video and weld csv files. The ingested frames/images are published to MediaMTX RTSP server. Similarly, the ingested weld sensor data are published to Telegraf.
 
@@ -29,7 +28,6 @@ Also, publishes all the processed weld sensor data points over MQTT.
 ### 2.3 **Fusion Analytics**
 
 **Fusion Analytics** subscribes to the MQTT topics coming out of `DL Streamer Pipeline Server` and `Time Series Analytics Microservice`, applies `AND`/`OR` logic to determine the anomalies during weld process, publishes the results over MQTT and writes the results as a measurement/table in **InfluxDB**
-
 
 ### 3. **Data Visualization**
 
