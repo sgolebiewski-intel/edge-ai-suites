@@ -1,7 +1,7 @@
 
 # Architecture
 
-![MultiModal Weld Defect Detection Architecture Diagram](./_images/Multimodal-Weld-Defect-Detection-Architecture.png)
+![MultiModal Weld Defect Detection Architecture Diagram](../_images/Multimodal-Weld-Defect-Detection-Architecture.png)
 
 
 ## 1. **Weld Data Simulator**:

@@ -59,7 +59,7 @@ Using the `edge-ai-suites/manufacturing-ai-suite/industrial-edge-insights-multim
 
 Timeseries data is being ingested into **Telegraf** using the **MQTT** protocol using the **weld-data-simulator** data simulator
 Vision data is being ingested into **dlstreamer-pipeline-server** using the **RTSP** protocol using the **weld-data-simulator** data simulator
-  
+
 ### **Data Ingestion**
 
 **Telegraf** through its input plugins (**MQTT**) gathers the data and sends this input data to both **InfluxDB** and **Time Series Analytics Microservice**.
@@ -74,7 +74,7 @@ Vision data is being ingested into **dlstreamer-pipeline-server** using the **RT
 
 **Time Series Analytics Microservice** uses the User Defined Function(UDF) deployment package(TICK Scripts, UDFs, Models) which is already built-in to the container image. The UDF deployment package is available
 at `edge-ai-suites/manufacturing-ai-suite/industrial-edge-insights-multimodal/config/time-series-analytics-microservice`. Directory details is as below:
-  
+
 #### **`config.json`**:
 
 **UDFs Configuration**:
@@ -116,9 +116,9 @@ The `mqtt` section specifies the MQTT broker details for sending alerts.
 
 #### **`tick_scripts/`**:
    - The TICKScript `weld_anomaly_detector.tick` determines processing of the input data coming in.
-     Mainly, has the details on execution of the UDF file, storage of processed data and publishing of alerts. 
+     Mainly, has the details on execution of the UDF file, storage of processed data and publishing of alerts.
      By default, it is configured to publish the alerts to **MQTT**.
-   
+
 #### **`models/`**:
    - The `weld_anomaly_detector.cb` is a model built using the Catboost machine learning library.
 
@@ -138,22 +138,22 @@ The `mqtt` section specifies the MQTT broker details for sending alerts.
 > **NOTE**:
 >  - The below `make up` fails if the above required fields are not populated
 >    as per the rules called out in `.env` file.
->  - The sample app is deployed by pulling the pre-built container images of the sample app 
+>  - The sample app is deployed by pulling the pre-built container images of the sample app
 >    from the docker hub OR from the internal container registry (login to the docker registry from cli and configure `DOCKER_REGISTRY`
 >    env variable in `.env` file at `edge-ai-suites/manufacturing-ai-suite/industrial-edge-insights-multimodal`)
->  - The `CONTINUOUS_SIMULATOR_INGESTION` variable in the `.env` file (for Docker Compose) and in `helm/values.yaml` (for Helm deployments) 
->    is set to `true` by default, enabling continuous looping of simulator data. To ingest the simulator data only once (without looping), 
+>  - The `CONTINUOUS_SIMULATOR_INGESTION` variable in the `.env` file (for Docker Compose) and in `helm/values.yaml` (for Helm deployments)
+>    is set to `true` by default, enabling continuous looping of simulator data. To ingest the simulator data only once (without looping),
 >    set this variable to `false`.
-> - The update rate of the graph and table may lag by a few seconds and might not perfectly align with the video stream, since 
+> - The update rate of the graph and table may lag by a few seconds and might not perfectly align with the video stream, since
 >   Grafana’s minimum refresh interval is 5 seconds.
-> - The graph and table may initially display "No Data" because the Time Series Analytics Microservice requires some time to 
+> - The graph and table may initially display "No Data" because the Time Series Analytics Microservice requires some time to
 >   install its dependency packages before it can start running.
 
     ```bash
     cd <PATH_TO_REPO>/edge-ai-suites/manufacturing-ai-suite/industrial-edge-insights-multimodal
     make up
     ```
-   
+
 Use the following command to verify that all containers are active and error-free.
 
 > **Note:** The command `make status` may show errors in containers like ia-grafana when user have not logged in
@@ -187,7 +187,7 @@ Use the following command to verify that all containers are active and error-fre
     ``` bash
     # For below command, the INFLUXDB_USERNAME and INFLUXDB_PASSWORD needs to be fetched from `.env` file
     # for docker compose deployment and `values.yml` for helm deployment
-    influx -username <username> -password <passwd> 
+    influx -username <username> -password <passwd>
     use datain # database access
     show measurements
     # Run below query to check and output measurement processed
@@ -198,23 +198,23 @@ Use the following command to verify that all containers are active and error-fre
 2. To check the output in Grafana:
 
     - Use link `http://<host_ip>:3000` to launch Grafana from browser (preferably, chrome browser)
-      
+
       > **Note**: Use link `http://<host_ip>:30001` to launch Grafana from browser (preferably, chrome browser) for the helm deployment
-    
+
     - Login to the Grafana with values set for `VISUALIZER_GRAFANA_USER` and `VISUALIZER_GRAFANA_PASSWORD`
       in `.env` file and select **Multimodal Weld Defect Detection Dashboard**.
 
-      ![Grafana login](./_images/login_wt.png)
+      ![Grafana login](../_images/login_wt.png)
 
-    - After login, click on Dashboard 
-      ![Menu view](./_images/dashboard.png)
+    - After login, click on Dashboard
+      ![Menu view](../_images/dashboard.png)
 
     - Select the `Multimodal Weld Defect Detection Dashboard`.
-      ![Multimodal Weld Defect Detection Dashboard](./_images/grafana_dashboard_selection.png)
+      ![Multimodal Weld Defect Detection Dashboard](../_images/grafana_dashboard_selection.png)
 
     - One will see the below output.
-  
-      ![Anomaly prediction for weld data](./_images/anomaly_prediction.png)
+
+      ![Anomaly prediction for weld data](../_images/anomaly_prediction.png)
 
 ## Bring down the sample app
 
