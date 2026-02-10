@@ -9,9 +9,9 @@ Enabling such use cases across multiple viewpoints helps in understanding the ob
 ## Use Cases
 
 - **Vehicle Axle Detection**: Determines vehicle class based on axle and wheel count
-  - Usage: Used for toll classification and revenue calculation.
+  - Intended for toll classification and revenue calculation.
 - **License Plate Detection**: Identifies vehicles uniquely using license plates
-  - Usage: Used for reading vehicle license plate text from both front and rear views.
+  - Intended for reading vehicle license plate text from both front and rear views.
 - **Visualization & Analytics**:Provides real-time and historical insights for toll operators.
 
 ## Key Benefits
@@ -24,7 +24,7 @@ Enabling such use cases across multiple viewpoints helps in understanding the ob
 
 The system uses the **Metro Edge Architecture** based on three key principles:
 
-1. **Perception**: Deep Learning Streamer (DLStreamer) processes 3/4 camera feeds.
+1. [Perception](./docs/user-guide/perception-layer.md): Deep Learning Streamer (DLStreamer) processes 3/4 camera feeds.
 2. **Control**: SceneScape Controller aggregates metadata.
 3. **Analytics**: Node-RED transforms events into traffic insights (Traffic Volume, Flow Efficiency, Tariffing).
 
@@ -33,8 +33,8 @@ For more details, refer to [How it Works](./docs/user-guide/how-it-works.md).
 ## Learn More
 
 - [System Requirements](./docs/user-guide/get-started/system-requirements.md): Hardware, OS and Software Prerequisites.
-- [Get Started](./docs/user-guide/get-started.md): Installation, Configuration and Launch steps.
-- [Technical Reference](./docs/user-guide/how-it-works/technical-reference.md): Engineering Specs, Zero-Copy Pipeline and API usage.
+- [Get Started](docs/user-guide/get-started.md): Installation, Configuration and Launch steps.
+- [How It Works](./docs/user-guide/how-it-works.md): Engineering Specs, Zero-Copy Pipeline and API usage.
 - [Troubleshooting](./docs/user-guide/troubleshooting.md): Solutions to common issues.
 
 ## License
