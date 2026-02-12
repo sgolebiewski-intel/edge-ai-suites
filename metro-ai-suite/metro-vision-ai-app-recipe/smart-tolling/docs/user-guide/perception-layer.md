@@ -1,9 +1,9 @@
-# 1. The Perception Layer
+# The Perception Layer
 
 The core of the system is the **DLStreamer Pipeline Server**, which orchestrates
 three parallel pipelines defined in `config.json`.
 
-## 1.1 Pipeline Strategy
+## Pipeline Strategy
 
 | Pipeline Name | Camera View | Primary Adapters | Key Models |
 | :--- | :--- | :--- | :--- |
@@ -12,7 +12,7 @@ three parallel pipelines defined in `config.json`.
 | **`toll-side1`** | Side Profile Lane 1 | `sscape_adapter_side.py` | **`axle_int8`**, `vehicle_type_model`, `color_int8` |
 | **`toll-side2`** | Side Profile Lane 2 | `sscape_adapter_side.py` | **`axle_int8`**, `vehicle_type_model`, `color_int8` |
 
-## 1.2 Algorithm Logic ("Under the Hood")
+## Algorithm Logic
 
 ### A. Smart Axle Counting (`sscape_adapter_side.py`)
 
@@ -40,3 +40,8 @@ Counting wheels is easy; counting *taxable* wheels is hard. Our adapter implemen
 The system captures evidence from all angles to create a complete "Vehicle Package".
 Instead of sending raw video streams, adapters encode "Evidence Crops" as
 **Base64 strings** directly inside the JSON MQTT payload.
+
+## Learn More
+
+- [Analytics Pipeline](./how-it-works.md)
+- [Support and Troubleshooting](./troubleshooting.md)
