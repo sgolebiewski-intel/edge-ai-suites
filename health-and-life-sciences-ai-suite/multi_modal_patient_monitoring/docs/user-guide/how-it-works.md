@@ -113,3 +113,8 @@ present vitals and system status to end‑users.
 
 This modular architecture allows each component to be developed, deployed, and scaled
 independently while sharing common assets and infrastructure.
+
+## Learn More
+
+- [System Requirements](./get-started/system-requirements.md)
+- [Get Started](./get-started.md)
